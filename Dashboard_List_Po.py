@@ -123,7 +123,7 @@ with c2:
     """.format(amt=f"{df_view['Total_Amount'].sum():,.2f}"), unsafe_allow_html=True)
 
 # =========================
-# 3 CHARTS (ONE ROW): PO COUNT BY PTJ, FIXED YEARS
+# 3 CHARTS (ONE ROW): PO COUNT BY PTJ, FIXED YEARS (FOLLOW SLICER)
 # =========================
 st.markdown("### Jumlah Pengeluaran Pesanan Tempatan Berdasarkan Tahun")
 
@@ -131,7 +131,8 @@ years_to_show = [2023, 2024, 2025]
 cols = st.columns(3)
 
 for col, yr in zip(cols, years_to_show):
-    d = df[df["PTJ_y"].isin(allowed_ptj_codes)].copy()
+    # ✅ use df_view (already filtered by PTJ slicer + allowed codes)
+    d = df_view.copy()
     d = d[d["Year"] == yr]
 
     ptj_cnt = (
@@ -157,8 +158,6 @@ for col, yr in zip(cols, years_to_show):
             plot_bgcolor="rgba(0,0,0,0)",
             paper_bgcolor="white",
             margin=dict(l=16, r=16, t=36, b=16),
-
-            # ✅ outline box
             shapes=[
                 dict(
                     type="rect",
@@ -182,6 +181,7 @@ for col, yr in zip(cols, years_to_show):
         )
 
         st.plotly_chart(fig, use_container_width=True)
+
 
 
 
