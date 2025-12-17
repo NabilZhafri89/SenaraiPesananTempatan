@@ -7,8 +7,8 @@ st.title("Laporan Pengeluaran Pesanan Tempatan")
 
 
 
-LISTPO_PATH = List_PO_EXTRACT
-DIMPTJ_PATH = DimPTJ
+LISTPO_PATH = "List_PO_EXTRACT.csv"
+DIMPTJ_PATH = "DimPTJ.csv"
 
 # =========================
 # LOAD & MERGE
