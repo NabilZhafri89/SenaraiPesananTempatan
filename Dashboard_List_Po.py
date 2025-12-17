@@ -125,7 +125,7 @@ with c2:
 # =========================
 # 3 CHARTS (ONE ROW): PO COUNT BY PTJ, FIXED YEARS
 # =========================
-st.markdown("### Total PO (Count) Mengikut PTJ")
+st.markdown("### Jumlah Pengeluaran Pesanan Tempatan Berdasarkan Tahun")
 
 years_to_show = [2023, 2024, 2025]
 cols = st.columns(3)
