@@ -54,7 +54,7 @@ selected_year = st.sidebar.multiselect(
 )
 
 # ---- PTJ code restriction (background rule) ----
-allowed_ptj_codes = ["PL", "SD", "TW", "BT", "MR", "SB"]
+allowed_ptj_codes = ["PL", "SD", "TW", "BT", "MR", "SI"]
 
 df_view = df[df["PTJ_y"].isin(allowed_ptj_codes)]
 
